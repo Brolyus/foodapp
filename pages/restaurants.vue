@@ -2,7 +2,7 @@
   <main class="container restaurant">
     <div class="restaurantheading">
       <h1>Restaurants</h1>
-      <AppSelect @change="selectedRestaurant = $event" />
+      <AppSelect @change="selectedRestaurant = $event" />gi
     </div>
 
     <AppRestaurantInfo :datasource="filteredRestaurants"/>
