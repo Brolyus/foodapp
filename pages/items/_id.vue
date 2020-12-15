@@ -12,7 +12,9 @@
 
         <div class="quantity">
           <input type="number" min="1" v-model="count" />
-          <button @click="addToCart" class="primary">Add to cart - ${{ combinedPrice }}</button>
+          <button @click="addToCart" class="primary">
+            Add to cart - ${{ combinedPrice }}
+          </button>
         </div>
 
         <fieldset v-if="currentItem.options">
@@ -46,13 +48,13 @@
             <label :for="addon"> {{ addon }} </label>
           </div>
         </fieldset>
-      </section>
 
-      <AppToast v-if="cartSubmitted">
+        <AppToast v-if="cartSubmitted">
           Order submited
-            <br>
-            Check out more <nuxt-link to="/restaurants">restaurants</nuxt-link>
+          <br />
+          Check out more <nuxt-link to="/restaurants">restaurants</nuxt-link>
         </AppToast>
+      </section>
 
       <section class="options">
         <h3>Description</h3>
@@ -68,7 +70,7 @@ import AppToast from "@/components/AppToast.vue";
 
 export default {
   components: {
-      AppToast
+    AppToast,
   },
   data() {
     return {
@@ -101,19 +103,19 @@ export default {
     },
   },
   methods: {
-      addToCart() {
-          let formOutput = {
-              item: this.currentItem.item,
-              count: this.count,
-              options: this.itemOptions,
-              addOns: this.itemAddons,
-              combinedPrice: this.combinedPrice
-          }
+    addToCart() {
+      let formOutput = {
+        item: this.currentItem.item,
+        count: this.count,
+        options: this.itemOptions,
+        addOns: this.itemAddons,
+        combinedPrice: this.combinedPrice,
+      };
 
-          this.$store.commit('addToCart', formOutput)
-          this.cartSubmitted = true
-      }
-  }
+      this.$store.commit("addToCart", formOutput);
+      this.cartSubmitted = true;
+    },
+  },
 };
 </script>
 
