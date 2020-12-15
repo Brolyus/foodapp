@@ -12,8 +12,9 @@ export default {};
 <style lang="scss" scoped>
 .masthead {
   width: 100%;
-  height: 90vh; 
+  height: 80vh; 
   overflow: hidden;
+  margin-bottom: 60px;
   padding: 40px;
   background-size: cover !important;
   background: linear-gradient(

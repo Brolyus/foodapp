@@ -9,7 +9,7 @@ textarea {
 
 // sticky footer
 .content {
-  min-height: calc(100vh - 50px);
+  min-height: calc(90vh - 50px);
 }
 
 footer {
@@ -299,8 +299,8 @@ table th {
   }
 
   h1 {
-    font-size: 30px;
     margin-right: 40px;
+    font-size: 30px;
   }
 
   .filter {
